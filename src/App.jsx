@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 
 import Blog from './component/Blog'
+import BlogDetail from './pages/BlogDetail'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
         <Route exact path='/blog' element={<Blog/>}></Route>
+        <Route exact path='/:slug' element={<BlogDetail/>}></Route>
       </Routes>
         
     </>

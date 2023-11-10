@@ -14,9 +14,7 @@ function Blog() {
     })
 
 },[])
- if(blogs[0].sub_title.length > 35){
-
- }
+ 
   return (
     <Layout>
         <div className='mt-5'>
@@ -27,7 +25,7 @@ function Blog() {
             <div className='grid grid-cols-3 gap-4'>
               {
                 blogs && blogs.map((blog) => {
-                  return <Link>
+                  return <Link to={"/" + blog.slug}>
                   <div class="max-w-lg mx-auto">
                       <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
                          
