@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Product from './component/Product'
+
+import Blog from './component/Blog'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +14,7 @@ function App() {
     <>
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
-        <Route exact path='/product' element={<Product/>}></Route>
+        <Route exact path='/blog' element={<Blog/>}></Route>
       </Routes>
         
     </>

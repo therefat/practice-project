@@ -8,7 +8,7 @@ function NavbarC() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/aboutus", label: "About Us" },
-    { href: "/product", label: "Products" },
+    { href: "/blog", label: "blog" },
     { href: "/contact-us", label: "Contact Us" },
   ];
   return (
