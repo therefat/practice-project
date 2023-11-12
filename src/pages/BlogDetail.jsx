@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Layout from '../layout/Layout'
 import axios from 'axios'
+import HTMLReactParser from 'html-react-parser'
 
 function BlogDetail() {
     const {slug} = useParams()
@@ -19,9 +20,16 @@ function BlogDetail() {
     console.log(blog)
   return (
     <Layout> 
-        <div>BlogDetail {slug} </div>
-        <h1>{blog?.id}</h1>
-        <img src={blog?.image} alt="" />
+        {
+          blog && (
+          <div>
+              <div>BlogDetail {slug} </div>
+        <h1 className='text-xl'>{blog.title}</h1>
+        <img className='w-55' src={blog.image} alt="" />
+        <div>{HTMLReactParser(blog.description)}</div>
+          </div>
+          )
+        }
     </Layout>
   )
 }

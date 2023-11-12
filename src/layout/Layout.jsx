@@ -7,7 +7,7 @@ function Layout({ children }) {
   return (
     <div>
         <NavbarC/>
-        <div className='min-h-[75vh] bg-slate-100'>
+        <div className=''>
                 {children}
                 </div>
     <Footer/>
