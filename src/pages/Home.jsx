@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../layout/Layout'
 import { Button } from 'keep-react'
 // import Slider from 'react-slick'
 import Slider from "react-slick";
 import axios from 'axios'
+import { SettingsContext } from '../component/SettingsProvider';
 
 function Home() {
+  const settingsDataFromContext = useContext(SettingsContext)
+  console.log(settingsDataFromContext)
   const[settings, setSettings]= useState();
   useEffect(()=>{
     axios('https://uol-v-2.hostprohub.com/api/settings?platform=web')
@@ -60,7 +63,7 @@ responsive: [
        <div className="sliderss">
        <Slider {...slickSettings}>
             {
-             settings?.hompageBanner.map((banner,index)=>{
+             settingsDataFromContext?.hompageBanner.map((banner,index)=>{
                     return(
                   
                     <div>

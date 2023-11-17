@@ -4,7 +4,8 @@ import { AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
 import { BiLogoPinterestAlt } from "react-icons/bi";
 
 
-function Footer() {
+function Footer(props) {
+  console.log(props.footerData)
     const iconsTab = [
         { icon: <FaFacebookF /> },
         { icon: <AiOutlineTwitter /> },
@@ -77,6 +78,9 @@ function Footer() {
               <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
                 Full-body Strength
               </p>
+              <p>{props.footerData?.hotline_no}</p>
+              <img src={props.footerData?.site_logo} className="h-20 w-20"/>
+
             </div>
 
             {/* right div */}

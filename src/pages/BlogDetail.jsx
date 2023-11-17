@@ -10,7 +10,7 @@ function BlogDetail() {
     const [blog,setBlogs] = useState()
     useEffect(()=>{
     
-        axios.get(`https://uol-v-2.hostprohub.com/api/blog/${slug}`)
+        axios.get('https://uol-v-2.hostprohub.com/api/blog/' + slug )
         .then(response => {
            
             setBlogs(response.data.data);
@@ -20,13 +20,14 @@ function BlogDetail() {
     console.log(blog)
   return (
     <Layout> 
+      <h1>kdfjdsk</h1>
         {
           blog && (
           <div>
               <div>BlogDetail {slug} </div>
         <h1 className='text-xl'>{blog.title}</h1>
         <img className='w-55' src={blog.image} alt="" />
-        <div>{HTMLReactParser(blog.description)}</div>
+        {/* <div>{HTMLReactParser(blog.description)}</div> */}
           </div>
           )
         }
